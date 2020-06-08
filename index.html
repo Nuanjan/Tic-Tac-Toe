@@ -47,7 +47,7 @@
         </form>
       </section>
 
-      <section>
+      <section class="hidden">
         <h1>Change Password</h1>
         <form id="change-pw">
           <input placeholder="Old Password" type="password"
@@ -58,11 +58,38 @@
         </form>
       </section>
 
-<section id="signout-content">
+<section class="hidden" id="signout-content">
     <h1>Sign Out</h1>
   <button id="sign-out">Sign Out</button>
 </section>
 </div>
+<section class="hidden">
+          <h3>Wel come To Tic-Tac-Toe Game</h3>
+          <button id="games-create">start Game</button>
+</section>
+<section class="hidden">
+  <h3>get game index</h3>
+  <button id="games-index">show Game</button>
+</section>
+<section class="hidden-game">
+<div class="container">
+  <div class="row">
+      <div class="col-6 letter-x">X</div>
+      <div class="col-6 letter-o">O</div>
+  </div>
+  <div class="row">
+    <div class="col-4 box" data-cell-index='0'></div>
+    <div class="col-4 box" data-cell-index='1'></div>
+    <div class="col-4 box" data-cell-index='2'></div>
+    <div class="col-4 box" data-cell-index='3'></div>
+    <div class="col-4 box" data-cell-index='4'></div>
+    <div class="col-4 box" data-cell-index='5'></div>
+    <div class="col-4 box" data-cell-index='6'></div>
+    <div class="col-4 box" data-cell-index='7'></div>
+    <div class="col-4 box" data-cell-index='8'></div>
+  </div>
+</div>
+</section>
 </main>
     </body>
 </html>

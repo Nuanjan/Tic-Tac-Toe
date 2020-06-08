@@ -39,9 +39,10 @@ const onCredSignOut = function (event) {
     .then(ui.signoutSuccess)
     .catch(ui.signoutFailure)
 }
+
 module.exports = {
   onCredSignUp: onCredSignUp,
   onCredSignIn: onCredSignIn,
   onCredChPw: onCredChPw,
-  onCredSignOut: onCredSignOut
+  onCredSignOut: onCredSignOut,
 }

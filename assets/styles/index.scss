@@ -99,7 +99,7 @@ placeholder {
    color: white;
  }
 .container{
-  margin: 300px auto;
+  margin: 100px auto;
 }
 .row {
   width: 60%;
@@ -162,4 +162,11 @@ placeholder {
 .failure {
   color: #d4320e;
   text-align: right;
+}
+.hidden {
+  display: none;
+}
+
+.hidden-game {
+  display: none;
 }

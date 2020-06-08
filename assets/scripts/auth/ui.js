@@ -27,7 +27,6 @@ const signupFailure = function () {
   $('#auth-section').hide()
 
 }
-
 const signinSuccess = function (response) {
   // Form reset:
   $('form').trigger('reset')
@@ -40,7 +39,8 @@ const signinSuccess = function (response) {
   $('#auth-section').hide()
   store.user = response.user
   console.log('token is = ' + response.user.token)
-  console.log('id is = '+ response.user)
+  console.log('id is = ' + response.user)
+  $('.hidden').show()
 }
 
 const signinFailure = function () {
@@ -103,6 +103,7 @@ const signoutFailure = function () {
   $('#message').removeClass()
   $('#message').addClass('failure')
 }
+
 module.exports = {
   signupSuccess: signupSuccess,
   signupFailure: signupFailure,

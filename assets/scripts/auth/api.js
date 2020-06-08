@@ -19,6 +19,7 @@ const credSignUp = function (data) {
 }
 
 const credSignIn = function (data) {
+  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
