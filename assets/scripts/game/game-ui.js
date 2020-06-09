@@ -4,12 +4,12 @@ const store = require('./../store')
 const createSuccess = function (response) {
   console.log(response)
   // Messaging:
-  $('#message').text('Create Game success!' + response.game.cells)
+  $('#message').text('Create Game success!')
   $('#message').show()
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log(response.game.cells)
   store.game = response.game
+  console.log(store.game._id)
   $('.hidden-game').show()
 }
 const createFailure = function () {
@@ -28,10 +28,30 @@ const indexSuccess = function (response) {
   $('#message').removeClass()
   $('#message').addClass('success')
   console.log(response)
-
 }
 const indexFailure = function () {
   $('#message').text('Show Index Game failed!')
+  // Show the element:
+  $('#message').show()
+  // Remove all the classes, then add the failure class
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+const updateSuccess = function (response) {
+  // Put book on the page
+  // Messaging:
+  $('#message').text('Show letter success')
+  $('#message').show()
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  console.log(response)
+}
+
+const updateFailure = function () {
+  // Show a error message
+  // Select the message element, change its text, and display it
+  // Change the text:
+  $('#message').text('Show letter failed!')
   // Show the element:
   $('#message').show()
   // Remove all the classes, then add the failure class
@@ -43,5 +63,7 @@ module.exports = {
   createSuccess,
   createFailure,
   indexSuccess,
-  indexFailure
+  indexFailure,
+  updateSuccess,
+  updateFailure
 }

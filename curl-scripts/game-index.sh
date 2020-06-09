@@ -1,6 +1,6 @@
 
 API='https://tic-tac-toe-wdi.herokuapp.com'
-URL_PATH='/games'
+URL_PATH='/games/'
 
 curl "${API}${URL_PATH}" \
   --include \

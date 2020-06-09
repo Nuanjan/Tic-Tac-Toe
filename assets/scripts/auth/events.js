@@ -44,5 +44,5 @@ module.exports = {
   onCredSignUp: onCredSignUp,
   onCredSignIn: onCredSignIn,
   onCredChPw: onCredChPw,
-  onCredSignOut: onCredSignOut,
+  onCredSignOut: onCredSignOut
 }

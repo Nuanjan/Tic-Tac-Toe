@@ -14,5 +14,6 @@ $(() => {
   $('#change-pw').on('submit', credEvent.onCredChPw)
   $('#sign-out').on('click', credEvent.onCredSignOut)
   $('#games-create').on('click', gameEvent.onGamesCreate)
-  $('#games-index').on('click', gameEvent.onGamesIndex)
+  // $('#games-index').on('click', gameEvent.onGamesIndex)
+  $('.box').on('click', gameEvent.onGamesUpdate)
 })

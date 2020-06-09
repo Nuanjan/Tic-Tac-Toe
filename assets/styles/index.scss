@@ -77,7 +77,7 @@ button:active {
 	top:1px;
 }
 
-h2 {
+h3 {
   text-align: center;
   margin-top: 10px;
   color:#0276FD;
@@ -121,11 +121,11 @@ placeholder {
   font-size: 36px;
   padding: 10px;
 }
-
 .wrap {
   text-align: center;
   float: right;
   margin-right: 25px;
+  margin-bottom: 20px;
   padding: 10px 0s;
 
 }
@@ -166,7 +166,31 @@ placeholder {
 .hidden {
   display: none;
 }
-
 .hidden-game {
   display: none;
+}
+.hidden-ch-pw {
+  display: none;
+}
+.good-bye {
+  text-align: center;
+  font-size: 36px;
+  margin: 20px auto;
+  color: #1d7d9e;
+  padding: 10px;
+}
+#ch-pw {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  clear: right;
+}
+#games-create {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+#games-index {
+  display: block;
+  max-width: 300px;
+  margin: auto;
 }

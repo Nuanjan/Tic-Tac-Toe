@@ -14,20 +14,42 @@ const gamesCreate = function () {
   })
 }
 
-const gamesIndex = function () {
+// const gamesIndex = function () {
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     medthod: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: {
+//       games: []
+//     }
+//   })
+// }
+
+const gameUpdate = function (position, player) {
+  console.log(position, player)
   return $.ajax({
-    url: config.apiUrl + '/games',
-    medthod: 'GET',
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' + store.game._id,
     headers: {
       Authorization: 'Token token=' + store.user.token
+
     },
     data: {
-      games: []
+      game: {
+        cell: {
+          index: position,
+          value: player
+        },
+        over: false
+      }
     }
   })
 }
 
 module.exports = {
   gamesCreate,
-  gamesIndex
+  // gamesIndex,
+  gameUpdate
 }
