@@ -31,7 +31,7 @@
 
 #### Sign in / Sign up page
 
-[Imgur](https://i.imgur.com/Fey8psL.png)
+![Imgur](https://i.imgur.com/Fey8psL.png)
 
 #### game page
-[Imgur](https://i.imgur.com/ihYQq7x.png)
+![Imgur](https://i.imgur.com/ihYQq7x.png)
