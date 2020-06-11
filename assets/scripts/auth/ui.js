@@ -89,6 +89,7 @@ const signoutSuccess = function () {
   $('#message').addClass('good-bye')
   $('#hid').addClass('hidden')
   $('#sign-out').addClass('hidden')
+  $('.show').show()
   store.user.token = null
   console.log('token is = ' + store.user)
 }

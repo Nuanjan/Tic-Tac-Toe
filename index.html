@@ -73,28 +73,31 @@
         </div>
 </section>
 
-<section class="hidden">
-  <h3>get game index</h3>
-  <button id="games-index">show Game</button>
+<section class="hidden-game btn-show-history">
+  <h3>Game History</h3>
+  <button id="games-index">show Game History</button>
 </section>
+<div class="hidden-newGame">
+  <button id="new-game">Start New Game</button>
+</div>
 
 <section class="hidden-game">
 <div class="container">
-  <div class="row">
+  <div class="row board">
       <div class="col-6 letter-x ">X</div>
       <div class="col-6 letter-o ">O</div>
   </div>
 
   <div class="row">
-    <div class="col-4 box" data-cell-index='0'></div>
-    <div class="col-4 box" data-cell-index='1'></div>
-    <div class="col-4 box" data-cell-index='2'></div>
-    <div class="col-4 box" data-cell-index='3'></div>
-    <div class="col-4 box" data-cell-index='4'></div>
-    <div class="col-4 box" data-cell-index='5'></div>
-    <div class="col-4 box" data-cell-index='6'></div>
-    <div class="col-4 box" data-cell-index='7'></div>
-    <div class="col-4 box" data-cell-index='8'></div>
+    <div class="col-4 box" data-cell-index='0' value="stop"></div>
+    <div class="col-4 box" data-cell-index='1' value="stop"></div>
+    <div class="col-4 box" data-cell-index='2' value="stop"></div>
+    <div class="col-4 box" data-cell-index='3' value="stop"></div>
+    <div class="col-4 box" data-cell-index='4' value="stop"></div>
+    <div class="col-4 box" data-cell-index='5' value="stop"></div>
+    <div class="col-4 box" data-cell-index='6' value="stop"></div>
+    <div class="col-4 box" data-cell-index='7' value="stop"></div>
+    <div class="col-4 box" data-cell-index='8' value="stop"></div>
   </div>
 </div>
 </section>
