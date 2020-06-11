@@ -91,11 +91,13 @@ placeholder {
    background-color: #d4320e;
    border: 5px solid #dc7c15;
    display: flex;
-   height: 150px;
+   height: 200px;
    justify-content: center;
    border-radius: 10%;
    font-weight: bolder;
    color: white;
+   font-size: 48px;
+   text-align: center;
  }
 .container{
   margin: 100px auto;
@@ -134,6 +136,35 @@ placeholder {
 }
 
 @media (max-width: 1000px) {
+  .box {
+    align-items: center;
+     background-color: #d4320e;
+     border: 5px solid #dc7c15;
+     display: flex;
+     height: 130px;
+     justify-content: center;
+     border-radius: 10%;
+     font-weight: bolder;
+     color: white;
+     font-size: 24px;
+    text-align: center;
+   }
+  .container{
+    margin: 100px auto;
+  }
+  .row {
+    width: 60%;
+    margin: 50px auto;
+  }
+  .letter-o {
+    font-size: 30px;
+  }
+  .letter-x {
+    font-size: 30px;
+  }
+}
+
+@media(max-width: 770px) {
   .row {
     display: flex;
   }
@@ -141,12 +172,32 @@ placeholder {
     background-color: white;
     float: left;
     width: 100%;
-    height: 400px;
+    height: 100px;
     border: 10px solid #fbc326;
     border-radius: 5%;
     opacity: 80%;
+    font-size: 20px;
 
   }
+  .box {
+    align-items: center;
+     background-color: #d4320e;
+     border: 5px solid #dc7c15;
+     display: flex;
+     height: 100px;
+     justify-content: center;
+     border-radius: 10%;
+     font-weight: bolder;
+     color: white;
+     font-size: 24px;
+      text-align: center;
+   }
+   .letter-o {
+     font-size: 28px;
+   }
+   .letter-x {
+     font-size: 28px;
+   }
 }
 #massege {
 
@@ -201,4 +252,14 @@ placeholder {
   display: block;
   max-width: 300px;
   margin: auto;
+}
+
+#totalGame {
+display: none;
+text-align: center;
+color:#d4320e;
+width: 100%;
+height: 100px;
+font-size: 36px;
+background: rgba(255, 255, 255, 0.6);
 }

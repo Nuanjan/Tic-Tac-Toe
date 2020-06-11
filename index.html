@@ -25,7 +25,7 @@
     <button id="sign-out">Sign Out</button>
   </section>
 </div>
-<div class="show">
+<div class="column" id="show-signup">
       <section id="sec-sign-up">
         <h1>Sign Up</h1>
         <form id="sign-up">
@@ -38,7 +38,8 @@
           <button type="submit">sign up</button>
         </form>
       </section>
-
+      </div>
+<div class="column" id="show-signin">
       <section>
         <h1>Sign In</h1>
         <form id="sign-in">
@@ -49,11 +50,13 @@
           <button type="submit">sign In</button>
         </form>
       </section>
-</div>
+  </div>
+
 <div id="hid">
       <section class="hidden">
         <div id="ch-pw">
         <h3>Change Password</h3>
+        <p id="ch-msg"></p>
         <form id="change-pw">
           <input placeholder="Old Password" type="password"
           name="passwords[old]" required>
@@ -69,35 +72,34 @@
 <section class="hidden">
 <div class="center">
           <h3>Wel come To Tic-Tac-Toe Game</h3>
-          <button id="games-create">start Game</button>
+          <button id="games-create">New Game</button>
         </div>
 </section>
 
-<section class="hidden-game btn-show-history">
+<section class="hidden btn-show-history">
   <h3>Game History</h3>
   <button id="games-index">show Game History</button>
+  <div id="totalGame">
+  </div>
 </section>
-<div class="hidden-newGame">
-  <button id="new-game">Start New Game</button>
-</div>
 
 <section class="hidden-game">
 <div class="container">
-  <div class="row board">
+  <div class="row h-100" id="head-board">
       <div class="col-6 letter-x ">X</div>
       <div class="col-6 letter-o ">O</div>
   </div>
 
-  <div class="row">
-    <div class="col-4 box" data-cell-index='0' value="stop"></div>
-    <div class="col-4 box" data-cell-index='1' value="stop"></div>
-    <div class="col-4 box" data-cell-index='2' value="stop"></div>
-    <div class="col-4 box" data-cell-index='3' value="stop"></div>
-    <div class="col-4 box" data-cell-index='4' value="stop"></div>
-    <div class="col-4 box" data-cell-index='5' value="stop"></div>
-    <div class="col-4 box" data-cell-index='6' value="stop"></div>
-    <div class="col-4 box" data-cell-index='7' value="stop"></div>
-    <div class="col-4 box" data-cell-index='8' value="stop"></div>
+  <div class="row game-board">
+    <div class="col-4 box" data-cell-index='0' ></div>
+    <div class="col-4 box" data-cell-index='1' ></div>
+    <div class="col-4 box" data-cell-index='2' ></div>
+    <div class="col-4 box" data-cell-index='3' ></div>
+    <div class="col-4 box" data-cell-index='4' ></div>
+    <div class="col-4 box" data-cell-index='5' ></div>
+    <div class="col-4 box" data-cell-index='6' ></div>
+    <div class="col-4 box" data-cell-index='7' ></div>
+    <div class="col-4 box" data-cell-index='8' ></div>
   </div>
 </div>
 </section>

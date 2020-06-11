@@ -8,11 +8,13 @@ const signupSuccess = function (response) {
 
   // Messaging:
   $('#message').text('Welcome! ' + response.user.email)
+  console.log(response)
   $('#message').show()
   $('#message').removeClass()
   $('#message').addClass('success')
   $('.hidden').removeClass()
-  $('.show').hide()
+  $('#show-signup').hide()
+  $('#hid').hide()
 }
 
 const signupFailure = function () {
@@ -36,7 +38,9 @@ const signinSuccess = function (response) {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('.hidden').removeClass()
-  $('.show').hide()
+  $('.column').hide()
+  $('#games-index').show()
+  $('#hid').show()
   store.user = response.user
   console.log('token is = ' + response.user.token)
   console.log('id is = ' + response.user)
@@ -60,10 +64,10 @@ const chPwSuccess = function () {
   $('form').trigger('reset')
 
   // Messaging:
-  $('#message').text('Password changed! ')
-  $('#message').show()
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  $('#ch-msg').text('Password changed! ')
+  $('#ch-msg').show().css('text-align', 'center')
+  $('#ch-msg').removeClass()
+  $('#ch-msg').addClass('success')
 }
 
 const chPwFailure = function () {

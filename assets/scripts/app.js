@@ -17,5 +17,4 @@ $(() => {
   $('#games-index').on('click', gameEvent.onGamesIndex)
   $('.box').one('click', gameEvent.onGamesUpdate)
   //  $('.box').unbind('click').one('click', gameEvent.onGamesUpdate)
-  $('#new-game').on('click', gameEvent.onNewGame)
 })

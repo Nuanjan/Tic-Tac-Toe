@@ -4,13 +4,10 @@ const store = require('./../store')
 const createSuccess = function (response) {
   console.log(response)
   // Messaging:
-  $('#message').text('Create Game success!')
-  $('#message').show()
-  $('#message').removeClass()
-  $('#message').addClass('success')
+
   store.game = response.game
-  console.log(store.game._id)
   $('.hidden-game').show()
+  $('.box').text('')
 }
 const createFailure = function () {
   // Show a error message
@@ -23,13 +20,10 @@ const createFailure = function () {
 }
 
 const indexSuccess = function (response) {
-  $('#message').text('Show Index Game success!')
-  $('#message').show()
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  store.game = response.game
-  console.log(store.game)
+  $('#totalGame').show().text(`You have been play: ${response.games.length} times!`).delay(2000).fadeOut(800)
+  console.log(response.games.length)
 }
+
 const indexFailure = function () {
   $('#message').text('Show Index Game failed!')
   // Show the element:
@@ -41,11 +35,13 @@ const indexFailure = function () {
 const updateSuccess = function (response) {
   // Put book on the page
   // Messaging:
-  $('#message').text('Show letter success')
-  $('#message').show()
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log(response)
+  if (store.game.over === true) {
+    $('.hidden-newGame').show()
+    $('.btn-show-history').show()
+    $('.box').off('click')
+    $('#head-board').show()
+    console.log(store.game.over)
+  }
 }
 
 const updateFailure = function () {
@@ -60,35 +56,11 @@ const updateFailure = function () {
   $('#message').addClass('failure')
 }
 
-const newGameSuccess = function (response) {
-  console.log(response)
-  // Messaging:
-  $('#message').text('Create Game success!')
-  $('#message').show()
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  store.game = response.game
-  console.log(store.game._id)
-  $('.box').text('')
-  $('.hidden-game').show()
-}
-const newGameFailure = function () {
-  // Show a error message
-  // Select the message element, change its text, and display it
-  // Change the text:
-  $('#message').text('Create Game failed!')
-  // Show the element:
-  $('#message').show()
-  // Remove all the classes, then a
-}
-
 module.exports = {
   createSuccess,
   createFailure,
   indexSuccess,
   indexFailure,
   updateSuccess,
-  updateFailure,
-  newGameSuccess,
-  newGameFailure
+  updateFailure
 }

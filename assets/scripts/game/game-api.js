@@ -14,9 +14,9 @@ const gamesCreate = function () {
   })
 }
 
-const gamesIndex = function () {
+const gamesIndex = function (status) {
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game._id,
+    url: config.apiUrl + '/games',
     medthod: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -39,27 +39,13 @@ const gameUpdate = function (position, player) {
           index: position,
           value: player
         },
-        over: false
+        over: store.game.over
       }
     }
   })
 }
-
-const newGame = function () {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'POST',
-    // data: formData,
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: {}
-  })
-}
-
 module.exports = {
   gamesCreate,
   gamesIndex,
-  gameUpdate,
-  newGame
+  gameUpdate
 }

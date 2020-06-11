@@ -9,7 +9,7 @@ const onGamesCreate = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log('this is data and form s =' + data + form)
+  $('.box').one('click', onGamesUpdate)
   api.gamesCreate(data)
     .then(ui.createSuccess)
     .catch(ui.createFailure)
@@ -49,8 +49,8 @@ const onGamesUpdate = function (event) {
         //    xWon = 0
         store.game.over = true
         //    arrGameHistory.push(store.game.cells[i])
-        $('.board').hide()
-        $('.box').text('X WON!').css('font-size', '2em')
+        $('#head-board').hide()
+        $('.box').text('X WON!')
       }
     } else if (store.game.cells[i] === 'o') {
       if ((store.game.cells[i] === store.game.cells[0] && store.game.cells[i] === store.game.cells[1] && store.game.cells[i] === store.game.cells[2]) ||
@@ -64,8 +64,8 @@ const onGamesUpdate = function (event) {
         console.log('o won')
         //  oWon = 0
         store.game.over = true
-        $('.board').hide()
-        $('.box').text('O WON!').css('font-size', '2em')
+        $('#head-board').hide()
+        $('.box').text('O WON!')
       }
     }
   }
@@ -73,16 +73,9 @@ const onGamesUpdate = function (event) {
   if (store.game.cells.every(gameTie)) {
     // if (store.game.cells.every(e => e !== '')  also work
     $('.board').hide()
-    $('.box').text('Tie Game!').css('font-size', '1.5em')
-    console.log('tie!!!!!!!')
+    $('.box').text('Tie Game!')
     //  arrGameHistory.push(store.game.cells)
     store.game.over = true
-  }
-
-  if (store.game.over === true) {
-    $('.hidden-newGame').show()
-    $('.btn-show-history').show()
-    $('.box').off('click')
   }
   // check if space is empty
   if ($(div).text() === '') {
@@ -90,7 +83,7 @@ const onGamesUpdate = function (event) {
   // add x to the board
     $('.letter-o').css('background-color', '#d4320e').text('O')
     $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
-    $(div).text(currentPlayer).css('font-size', '3em')
+    $(div).text(currentPlayer)
     if (currentPlayer === 'x') {
       $('.letter-o').css('background-color', '#1d7d9e').text('O TURN!')
       $('.letter-x').css('background-color', '#d4320e').text('X')
@@ -100,30 +93,16 @@ const onGamesUpdate = function (event) {
     }
   }
 }
-
-const onNewGame = function (event) {
-  console.log(store.game._id + 'id')
-  event.preventDefault()
-  const form = event.target
-  const data = getFormFields(form)
-  // after button newGame clicked call back function updateGame again to rebind box click
-  $('.box').one('click', onGamesUpdate)
-  $('.board').show()
-
-  api.newGame(data)
-    .then(ui.newGameSuccess)
-    .catch(ui.newGameFailure)
-}
-
 const onGamesIndex = function (event) {
-  api.gamesIndex()
+  api.gamesIndex(status)
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
 }
-
+// $('.box').one('click', onGamesUpdate)
+// $('.board').show()
 module.exports = {
   onGamesCreate,
   onGamesIndex,
-  onGamesUpdate,
-  onNewGame
+  onGamesUpdate
+
 }
