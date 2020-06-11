@@ -8,6 +8,7 @@ const createSuccess = function (response) {
   store.game = response.game
   $('.hidden-game').show()
   $('.box').text('')
+  $('#head-board').show()
 }
 const createFailure = function () {
   // Show a error message
@@ -39,7 +40,6 @@ const updateSuccess = function (response) {
     $('.hidden-newGame').show()
     $('.btn-show-history').show()
     $('.box').off('click')
-    $('#head-board').show()
     console.log(store.game.over)
   }
 }

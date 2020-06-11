@@ -1,7 +1,6 @@
 'use strict'
 const api = require('./api')
 const ui = require('./ui')
-const store = require('./../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onCredSignUp = function (event) {
@@ -38,6 +37,8 @@ const onCredSignOut = function (event) {
   api.credSignOut()
     .then(ui.signoutSuccess)
     .catch(ui.signoutFailure)
+
+$('#sign-in').on('submit', onCredSignIn)
 }
 
 module.exports = {

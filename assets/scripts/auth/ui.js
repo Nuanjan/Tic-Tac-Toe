@@ -93,9 +93,11 @@ const signoutSuccess = function () {
   $('#message').addClass('good-bye')
   $('#hid').addClass('hidden')
   $('#sign-out').addClass('hidden')
-  $('.show').show()
+  $('#show-signin').show()
+  $('#show-signup').show()
   store.user.token = null
   console.log('token is = ' + store.user)
+  window.location.reload()
 }
 
 const signoutFailure = function () {

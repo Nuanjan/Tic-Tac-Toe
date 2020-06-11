@@ -6,10 +6,10 @@ const store = require('./../store')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const onGamesCreate = function (event) {
+  $('.box').one('click', onGamesUpdate)
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  $('.box').one('click', onGamesUpdate)
   api.gamesCreate(data)
     .then(ui.createSuccess)
     .catch(ui.createFailure)
@@ -72,7 +72,7 @@ const onGamesUpdate = function (event) {
   // if every cells has value
   if (store.game.cells.every(gameTie)) {
     // if (store.game.cells.every(e => e !== '')  also work
-    $('.board').hide()
+    $('#head-board').hide()
     $('.box').text('Tie Game!')
     //  arrGameHistory.push(store.game.cells)
     store.game.over = true
