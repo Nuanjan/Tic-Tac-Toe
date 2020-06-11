@@ -287,3 +287,14 @@ background: rgba(255, 255, 255, 0.6);
   align-items: center;
   justify-content: center;
 }
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1d7d9e;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+  padding: 10px;
+}
