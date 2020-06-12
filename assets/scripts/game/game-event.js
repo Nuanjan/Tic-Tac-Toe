@@ -3,8 +3,8 @@ const api = require('./game-api')
 const ui = require('./game-ui')
 const store = require('./../store')
 // const winner = require('./gameOver')
-
 const getFormFields = require('../../../lib/get-form-fields.js')
+
 const onGamesCreate = function (event) {
   $('.letter-o').css('background-color', '#d4320e').text('O')
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
@@ -99,13 +99,13 @@ const onGamesUpdate = function (event) {
     }
   }
 }
+
 const onGamesIndex = function (event) {
   api.gamesIndex(status)
     .then(ui.indexSuccess)
     .catch(ui.indexFailure)
 }
-// $('.box').one('click', onGamesUpdate)
-// $('.board').show()
+
 module.exports = {
   onGamesCreate,
   onGamesIndex,
