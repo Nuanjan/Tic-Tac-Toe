@@ -98,7 +98,6 @@ const signoutSuccess = function () {
   $('#show-signup').show()
   store.user.token = null
   console.log('token is = ' + store.user)
-  window.location.reload()
 }
 
 const signoutFailure = function () {
