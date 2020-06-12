@@ -2,13 +2,15 @@
 const store = require('./../store')
 
 const createSuccess = function (response) {
-  console.log(response)
   // Messaging:
-
   store.game = response.game
+  console.log('store in create game is ', store)
   $('.hidden-game').show()
   $('.box').text('')
+
   $('#head-board').show()
+  $('#hid').show()
+  $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
 }
 const createFailure = function () {
   // Show a error message
@@ -38,7 +40,6 @@ const updateSuccess = function (response) {
   // Messaging:
   if (store.game.over === true) {
     $('.hidden-newGame').show()
-    $('.btn-show-history').show()
     $('.box').off('click')
     console.log(store.game.over)
   }

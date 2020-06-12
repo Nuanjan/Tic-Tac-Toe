@@ -25,6 +25,9 @@ h1{
 span {
   color: #d4320e;
 }
+#x {
+  color: black;
+}
 .row {
   display: flex;
 }
@@ -98,6 +101,7 @@ placeholder {
    color: white;
    font-size: 48px;
    text-align: center;
+   font-family: 'Fredoka One', cursive;
  }
 .container{
   margin: 100px auto;
@@ -110,11 +114,13 @@ placeholder {
   height: 80px;
   background-color: #1d7d9e;
   border: 2px solid white;
+  font-family: 'Fredoka One', cursive;
 }
 .letter-o {
   height:  80px;
   background-color: #fce41a;
   border: 2px solid white;
+  font-family: 'Fredoka One', cursive;
 }
 
 .col-6 {
@@ -287,6 +293,143 @@ background: rgba(255, 255, 255, 0.6);
   align-items: center;
   justify-content: center;
 }
+
+@media(max-width: 375px) {
+  .row {
+    display: flex;
+  }
+  .column {
+    background-color: white;
+    float: left;
+    width: 100%;
+    height: 100px;
+    border: 10px solid #fbc326;
+    border-radius: 5%;
+    opacity: 80%;
+    font-size: 20px;
+
+  }
+  .box {
+    align-items: center;
+     background-color: #d4320e;
+     border: 5px solid #dc7c15;
+     display: flex;
+     height: 80px;
+     justify-content: center;
+     border-radius: 10%;
+     font-weight: bolder;
+     color: white;
+     font-size: 18px;
+    text-align: center;
+   }
+   .letter-o {
+     font-size: 18px;
+   }
+   .letter-x {
+     font-size: 18px;
+   }
+   .row {
+     display: flex;
+   }
+   .column {
+     background-color: white;
+     float: left;
+     width: 100%;
+     height: 400px;
+     border: 10px solid #fbc326;
+     border-radius: 5%;
+     opacity: 80%;
+   }
+   .set-page {
+     display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   }
+   .letter-o{
+     height: 50px;
+   }
+   .letter-x {
+     height: 50px;
+   }
+   h1{
+     font-size: 36px;
+   }
+#totalGame {
+  font-size: 18px;
+}
+}
+#massege {
+
+}
+
+.success{
+  color: #1d7d9e;
+  text-align: right;
+  padding: 10px;
+}
+
+.failure {
+  color: #d4320e;
+  text-align: right;
+}
+#hidden {
+  display: none;
+}
+.hidden-game {
+  display: none;
+}
+.hidden-ch-pw {
+  display: none;
+}
+.good-bye {
+  text-align: center;
+  font-size: 36px;
+  margin: 20px auto;
+  color: #1d7d9e;
+  padding: 10px;
+}
+#ch-pw {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  clear: right;
+}
+#games-create {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+#games-index {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+.hidden-newGame {
+  display: none;
+  margin-top: 20px;
+}
+#new-game{
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+
+#totalGame {
+display: none;
+text-align: center;
+color:#d4320e;
+width: 100%;
+height: 100px;
+font-size: 36px;
+background: rgba(255, 255, 255, 0.6);
+}
+
+.set-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 footer {
   position: fixed;
   left: 0;
@@ -297,4 +440,13 @@ footer {
   text-align: left;
   font-size: 24px;
   padding: 10px;
+}
+#show-history {
+  display: none;
+}
+.hidden-signout {
+  display: none;
+}
+#hid {
+  display: none;
 }

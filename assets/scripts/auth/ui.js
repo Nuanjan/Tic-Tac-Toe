@@ -30,18 +30,17 @@ const signupFailure = function () {
 }
 const signinSuccess = function (response) {
   // Form reset:
+  store.user = response.user
   $('form').trigger('reset')
-
   // Messaging:
   $('#message').text('Welcome back! ' + response.user.email)
   $('#message').show()
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('.hidden').removeClass()
+  $('#hidden').show()
+  $('.hidden-signout').show()
   $('.column').hide()
-  $('#games-index').show()
-  $('#hid').show()
-  store.user = response.user
+
   console.log('token is = ' + response.user.token)
   console.log('id is = ' + response.user)
 }

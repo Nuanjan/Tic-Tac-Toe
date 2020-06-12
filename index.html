@@ -2,6 +2,7 @@
 <html>
     <head>
       <title>API Token Authentication</title>
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,13 +16,13 @@
 <main>
   <div class="row-header">
           <div id="header">
-              <h1>Tic <span>Tac</span> Toa <span>Game application</span></h1>
+              <h1>Tic <span>Tac</span> Toe <span>Game application</span></h1>
           </div>
         </div>
 
   <p id="message"></p>
   <div class="wrap">
-  <section class="hidden">
+  <section class="hidden-signout">
     <button id="sign-out">Sign Out</button>
   </section>
 </div>
@@ -54,8 +55,8 @@
   </div>
 </div>
 
-<div id="hid">
-      <section class="hidden">
+<div id="hidden">
+      <section>
         <div id="ch-pw">
         <h3>Change Password</h3>
         <p id="ch-msg"></p>
@@ -69,25 +70,24 @@
       </div>
       </section>
 
-
-
-<section class="hidden">
+<section>
 <div class="center">
-          <h3>Wel come To Tic-Tac-Toe Game</h3>
+          <h3>Welcome To Tic-Tac-Toe Game</h3>
           <button id="games-create">New Game</button>
         </div>
 </section>
-
-<section class="hidden btn-show-history">
+<section>
   <h3>Game History</h3>
-  <button id="games-index">show Game History</button>
+  <button id="games-index">Show Game History</button>
   <div id="totalGame">
   </div>
 </section>
+</div>
 
-<section class="hidden-game">
+<div id="hid">
+<section>
   <div class="row h-100" id="head-board">
-      <div class="col-6 letter-x ">X</div>
+      <div class="col-6 letter-x ">X<span id="x"> TURN!</span></div>
       <div class="col-6 letter-o ">O</div>
   </div>
 <div class="container">

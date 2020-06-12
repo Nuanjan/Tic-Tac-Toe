@@ -6,7 +6,11 @@ const store = require('./../store')
 
 const getFormFields = require('../../../lib/get-form-fields.js')
 const onGamesCreate = function (event) {
-  $('.box').one('click', onGamesUpdate)
+  $('.letter-o').css('background-color', '#d4320e').text('O')
+  $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
+  if (store.game.over === true) {
+    $('.box').one('click', onGamesUpdate)
+  }
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
@@ -15,8 +19,8 @@ const onGamesCreate = function (event) {
     .catch(ui.createFailure)
 }
 
-// let xWon = 0
-// let oWon = 0
+let xWon = false
+let oWon = false
 let currentPlayer = 'x'
 // let arrGameHistory = []
 // check if currentPlayer have a value
@@ -35,7 +39,6 @@ const onGamesUpdate = function (event) {
   store.game.cells[position] = currentPlayer
   // GOAl Check if x/o won so x/o have to match the index of horizontal and vertical and slope
   for (let i = 0; i < store.game.cells.length; i++) {
-    console.log(store.game.cells[i])
     if (store.game.cells[i] === 'x') {
       if ((store.game.cells[i] === store.game.cells[0] && store.game.cells[i] === store.game.cells[1] && store.game.cells[i] === store.game.cells[2]) ||
     (store.game.cells[i] === store.game.cells[3] && store.game.cells[i] === store.game.cells[4] && store.game.cells[i] === store.game.cells[5]) ||
@@ -48,6 +51,7 @@ const onGamesUpdate = function (event) {
         console.log('x won')
         //    xWon = 0
         store.game.over = true
+        xWon = true
         //    arrGameHistory.push(store.game.cells[i])
         $('#head-board').hide()
         $('.box').text('X WON!')
@@ -64,19 +68,21 @@ const onGamesUpdate = function (event) {
         console.log('o won')
         //  oWon = 0
         store.game.over = true
+        oWon = true
         $('#head-board').hide()
         $('.box').text('O WON!')
+        currentPlayer = 'x'
       }
     }
   }
   // if every cells has value
-  if (store.game.cells.every(gameTie)) {
+  if (store.game.cells.every(gameTie) && (!xWon || !oWon)) {
     // if (store.game.cells.every(e => e !== '')  also work
     $('#head-board').hide()
     $('.box').text('Tie Game!')
-    //  arrGameHistory.push(store.game.cells)
     store.game.over = true
   }
+
   // check if space is empty
   if ($(div).text() === '') {
   //  store.game.player = currentPlayer
