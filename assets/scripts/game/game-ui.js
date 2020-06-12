@@ -5,9 +5,7 @@ const createSuccess = function (response) {
   // Messaging:
   store.game = response.game
   console.log('store in create game is ', store)
-  $('.hidden-game').show()
   $('.box').text('')
-
   $('#head-board').show()
   $('#hid').show()
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')

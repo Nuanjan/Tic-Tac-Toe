@@ -40,6 +40,8 @@ const signinSuccess = function (response) {
   $('#hidden').show()
   $('.hidden-signout').show()
   $('.column').hide()
+  $('#hidden').show()
+
 
   console.log('token is = ' + response.user.token)
   console.log('id is = ' + response.user)
