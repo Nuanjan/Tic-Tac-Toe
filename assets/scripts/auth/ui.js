@@ -70,10 +70,10 @@ const chPwSuccess = function () {
 
 const chPwFailure = function () {
   // Show a error message
+  $('#change-pw')[0].reset()
   $('#ch-msg').text('Password Change Failed, Try agin!')
   $('#ch-msg').removeClass()
   $('#ch-msg').addClass('success').css('text-align', 'center').delay(1800).fadeOut(800)
-  $('#change-pw')[0].reset()
 }
 
 const signoutSuccess = function () {
