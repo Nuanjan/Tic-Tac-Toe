@@ -42,10 +42,7 @@ const signinSuccess = function (response) {
   $('.column').hide()
   $('#hidden').show()
   $('#sign-out').show()
-
-
-  console.log('token is = ' + response.user.token)
-  console.log('id is = ' + response.user)
+  $('.hide-sign-out').show()
 }
 
 const signinFailure = function () {
@@ -60,7 +57,6 @@ const signinFailure = function () {
   $('#message').addClass('failure')
   $('#auth-section').hide()
   $('#sign-in')[0].reset()
-
 }
 
 const chPwSuccess = function () {
@@ -103,6 +99,7 @@ const signoutSuccess = function () {
   store.user = null
   $('#hid').hide()
   $('#sign-out').hide()
+  $('.hide-sign-out').hide()
 }
 
 const signoutFailure = function () {
@@ -115,7 +112,6 @@ const signoutFailure = function () {
   // Remove all the classes, then add the failure class
   $('#message').removeClass()
   $('#message').addClass('failure')
-  $('')
 }
 
 module.exports = {

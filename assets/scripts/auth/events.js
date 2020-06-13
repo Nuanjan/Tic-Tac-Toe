@@ -37,8 +37,7 @@ const onCredSignOut = function (event) {
   api.credSignOut()
     .then(ui.signoutSuccess)
     .catch(ui.signoutFailure)
-
-$('#sign-in').on('submit', onCredSignIn)
+  $('#sign-in').on('submit', onCredSignIn)
 }
 
 module.exports = {
