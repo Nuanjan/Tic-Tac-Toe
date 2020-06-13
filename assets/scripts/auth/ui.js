@@ -64,7 +64,7 @@ const chPwSuccess = function () {
 
   // Messaging:
   $('#ch-msg').text('Password changed! ')
-  $('#ch-msg').show().css('text-align', 'center')
+  $('#ch-msg').show().css('text-align', 'center').delay(1800).fadeOut(800)
   $('#ch-msg').removeClass()
   $('#ch-msg').addClass('success')
 }
