@@ -141,6 +141,102 @@ placeholder {
   margin-right: 5px;
 }
 
+#massege {
+
+}
+
+.success{
+  color: #1d7d9e;
+  text-align: right;
+  padding: 10px;
+}
+
+.failure {
+  color: #d4320e;
+  text-align: right;
+}
+#hidden {
+  display: none;
+}
+.hidden-game {
+  display: none;
+}
+.hidden-ch-pw {
+  display: none;
+}
+.good-bye {
+  text-align: center;
+  font-size: 36px;
+  margin: 20px auto;
+  color: #1d7d9e;
+  padding: 10px;
+}
+#ch-pw {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  clear: right;
+}
+#games-create {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+#games-index {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+.hidden-newGame {
+  display: none;
+  margin-top: 20px;
+}
+#new-game{
+  display: block;
+  max-width: 300px;
+  margin: auto;
+}
+
+#totalGame {
+text-align: center;
+color:#d4320e;
+width: 100%;
+height: 100px;
+font-size: 36px;
+background: rgba(255, 255, 255, 0.6);
+margin: 50px 0;
+}
+
+.set-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1d7d9e;
+  color: white;
+  text-align: left;
+  font-size: 24px;
+  padding: 10px;
+}
+#show-history {
+  display: none;
+}
+.hidden-signout {
+  display: none;
+}
+#hid {
+  display: none;
+}
+#sign-out {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .box {
     align-items: center;
@@ -356,96 +452,4 @@ background: rgba(255, 255, 255, 0.6);
 #totalGame {
   font-size: 18px;
 }
-}
-#massege {
-
-}
-
-.success{
-  color: #1d7d9e;
-  text-align: right;
-  padding: 10px;
-}
-
-.failure {
-  color: #d4320e;
-  text-align: right;
-}
-#hidden {
-  display: none;
-}
-.hidden-game {
-  display: none;
-}
-.hidden-ch-pw {
-  display: none;
-}
-.good-bye {
-  text-align: center;
-  font-size: 36px;
-  margin: 20px auto;
-  color: #1d7d9e;
-  padding: 10px;
-}
-#ch-pw {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.6);
-  clear: right;
-}
-#games-create {
-  display: block;
-  max-width: 300px;
-  margin: auto;
-}
-#games-index {
-  display: block;
-  max-width: 300px;
-  margin: auto;
-}
-.hidden-newGame {
-  display: none;
-  margin-top: 20px;
-}
-#new-game{
-  display: block;
-  max-width: 300px;
-  margin: auto;
-}
-
-#totalGame {
-text-align: center;
-color:#d4320e;
-width: 100%;
-height: 100px;
-font-size: 36px;
-background: rgba(255, 255, 255, 0.6);
-margin: 50px 0;
-}
-
-.set-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #1d7d9e;
-  color: white;
-  text-align: left;
-  font-size: 24px;
-  padding: 10px;
-}
-#show-history {
-  display: none;
-}
-.hidden-signout {
-  display: none;
-}
-#hid {
-  display: none;
 }
