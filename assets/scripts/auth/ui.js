@@ -14,6 +14,7 @@ const signupSuccess = function (response) {
   $('.hidden').removeClass()
   $('#show-signup').hide()
   $('#hid').hide()
+  $('#ch-msg').text('')
 }
 
 const signupFailure = function () {
@@ -27,6 +28,7 @@ const signupFailure = function () {
   $('#message').removeClass()
   $('#message').addClass('failure')
   $('#sign-up')[0].reset()
+  $('#ch-msg').text('')
 }
 const signinSuccess = function (response) {
   // Form reset:
@@ -42,6 +44,7 @@ const signinSuccess = function (response) {
   $('#hidden').show()
   $('#sign-out').show()
   $('.hide-sign-out').show()
+  $('#ch-msg').text('')
 }
 
 const signinFailure = function () {
@@ -56,6 +59,7 @@ const signinFailure = function () {
   $('#message').addClass('failure')
   $('#auth-section').hide()
   $('#sign-in')[0].reset()
+  $('#ch-msg').text('')
 }
 
 const chPwSuccess = function () {
