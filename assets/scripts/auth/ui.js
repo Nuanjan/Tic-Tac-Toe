@@ -63,16 +63,14 @@ const chPwSuccess = function () {
   $('form').trigger('reset')
 
   // Messaging:
-  $('#ch-msg').text('Password changed! ')
-  $('#ch-msg').show().css('text-align', 'center').delay(1800).fadeOut(800)
+  $('#ch-msg').text('Password changed! ').css('text-align', 'center').delay(1800).fadeOut(800)
   $('#ch-msg').removeClass()
   $('#ch-msg').addClass('success')
 }
 
 const chPwFailure = function () {
   // Show a error message
-  $('#ch-msg').text('Password Change Failed, Try agin!')
-  $('#ch-msg').show().css('text-align', 'center').delay(1800).fadeOut(800)
+  $('#ch-msg').text('Password Change Failed, Try agin!').css('text-align', 'center').delay(1800).fadeOut(800)
   $('#ch-msg').removeClass()
   $('#ch-msg').addClass('success')
   $('#change-pw')[0].reset()
