@@ -6,7 +6,9 @@ const store = require('./../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGamesCreate = function (event) {
-  $('.letter-o').css('background-color', '#d4320e').text('O')
+  $('.letter-x').css('color', '#fce41a')
+  $('.letter-o').css('color', '#1d7d9e')
+  $('.letter-o').css('background-color', '#fce41a').text('O')
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
   if (store.game.over === true) {
     $('.box').one('click', onGamesUpdate)
@@ -80,17 +82,20 @@ const onGamesUpdate = function (event) {
     $('.box').text('Tie Game!')
     store.game.over = true
   }
-
   // check if space is empty
   if ($(div).text() === '') {
   //  store.game.player = currentPlayer
   // add x to the board
-    $('.letter-o').css('background-color', '#d4320e').text('O')
-    $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
+    $('.letter-x').css('color', '#1d7d9e')
+    $('.letter-o').css('color', '#fce41a')
+    $('.letter-o').css('background-color', '#1d7d9e').text('O')
+    $('.letter-x').css('background-color', '#fce41a').text('X TURN!')
     $(div).text(currentPlayer)
     if (currentPlayer === 'x') {
-      $('.letter-o').css('background-color', '#1d7d9e').text('O TURN!')
-      $('.letter-x').css('background-color', '#d4320e').text('X')
+      $('.letter-x').css('color', '#fce41a')
+      $('.letter-o').css('color', '#1d7d9e')
+      $('.letter-o').css('background-color', '#fce41a').text('O TURN!')
+      $('.letter-x').css('background-color', '#1d7d9e').text('X')
       currentPlayer = 'o'
     } else {
       currentPlayer = 'x'

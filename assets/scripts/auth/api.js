@@ -19,7 +19,6 @@ const credSignUp = function (data) {
 }
 
 const credSignIn = function (data) {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -35,7 +34,6 @@ const credSignIn = function (data) {
 }
 
 const credChPw = function (data) {
-  console.log(store.user.token + 'here is token')
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',

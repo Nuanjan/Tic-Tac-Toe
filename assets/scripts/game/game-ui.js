@@ -4,7 +4,6 @@ const store = require('./../store')
 const createSuccess = function (response) {
   // Messaging:
   store.game = response.game
-  console.log('store in create game is ', store)
   $('.box').text('')
   $('#head-board').show()
   $('#hid').show()
@@ -22,7 +21,6 @@ const createFailure = function () {
 
 const indexSuccess = function (response) {
   $('#totalGame').show().text(`You have been play: ${response.games.length} times!`).delay(2000).fadeOut(800)
-  console.log(response.games.length)
 }
 
 const indexFailure = function () {
@@ -39,7 +37,6 @@ const updateSuccess = function (response) {
   if (store.game.over === true) {
     $('.hidden-newGame').show()
     $('.box').off('click')
-    console.log(store.game.over)
   }
 }
 

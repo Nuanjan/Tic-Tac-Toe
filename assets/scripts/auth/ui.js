@@ -8,7 +8,6 @@ const signupSuccess = function (response) {
 
   // Messaging:
   $('#message').text('Welcome! ' + response.user.email)
-  console.log(response)
   $('#message').show()
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -72,14 +71,9 @@ const chPwSuccess = function () {
 
 const chPwFailure = function () {
   // Show a error message
-  // Select the message element, change its text, and display it
-  // Change the text:
-  $('#message').text('Change Password failed! Try again')
-  // Show the element:
-  $('#message').show()
-  // Remove all the classes, then add the failure class
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#ch-msg').text('Password Change Failed, Try agin!').css('text-align', 'center').delay(1800).fadeOut(800)
+  $('#ch-msg').removeClass()
+  $('#ch-msg').addClass('success')
   $('#change-pw')[0].reset()
 }
 

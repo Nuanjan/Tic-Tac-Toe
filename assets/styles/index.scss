@@ -113,12 +113,14 @@ placeholder {
 .letter-x{
   height: 80px;
   background-color: #1d7d9e;
+  color:#fce41a;
   border: 2px solid white;
   font-family: 'Fredoka One', cursive;
 }
 .letter-o {
   height:  80px;
   background-color: #fce41a;
+  color:#1d7d9e;
   border: 2px solid white;
   font-family: 'Fredoka One', cursive;
 }
@@ -323,9 +325,6 @@ footer {
    flex-direction: column;
    align-items: flex-start;
    }
-
-}
-#massege {
 
 }
 

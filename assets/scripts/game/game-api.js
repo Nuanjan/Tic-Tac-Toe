@@ -25,10 +25,6 @@ const gamesIndex = function (status) {
 }
 
 const gameUpdate = function (position, player) {
-  console.log('position is ', position)
-  console.log('player is ', player)
-  console.log('id is ', store.game._id)
-  console.log('over is ', store.game.over)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + store.game._id,
