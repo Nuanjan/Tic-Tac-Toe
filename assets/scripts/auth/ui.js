@@ -65,7 +65,7 @@ const chPwSuccess = function () {
   // Messaging:
   $('#ch-msg').text('Password changed! ')
   $('#ch-msg').removeClass()
-  $('#ch-msg').addClass('success').css('text-align', 'center').delay(1800).fadeOut(800)
+  $('#ch-msg').addClass('success').css('text-align', 'center')
 }
 
 const chPwFailure = function () {
@@ -73,7 +73,7 @@ const chPwFailure = function () {
   $('#change-pw')[0].reset()
   $('#ch-msg').text('Password Change Failed, Try agin!')
   $('#ch-msg').removeClass()
-  $('#ch-msg').addClass('success').css('text-align', 'center').delay(1800).fadeOut(800)
+  $('#ch-msg').addClass('success').css('text-align', 'center')
 }
 
 const signoutSuccess = function () {
