@@ -15,6 +15,6 @@ $(() => {
   $('#sign-out').on('click', credEvent.onCredSignOut)
   $('#games-create').on('click', gameEvent.onGamesCreate)
   $('#games-index').on('click', gameEvent.onGamesIndex)
-  $('.box').one('click', gameEvent.onGamesUpdate)
+  $('.box').on('click', gameEvent.onGamesUpdate)
   //  $('.box').unbind('click').one('click', gameEvent.onGamesUpdate)
 })

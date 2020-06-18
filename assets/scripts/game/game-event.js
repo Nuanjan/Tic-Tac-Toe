@@ -6,13 +6,13 @@ const store = require('./../store')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGamesCreate = function (event) {
+  $('.box').html('')
+  currentPlayer = 'x'
+  $('#warning').text('')
   $('.letter-x').css('color', '#fce41a')
   $('.letter-o').css('color', '#1d7d9e')
   $('.letter-o').css('background-color', '#fce41a').text('O')
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
-  if (store.game.over === true) {
-    $('.box').one('click', onGamesUpdate)
-  }
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
@@ -27,8 +27,8 @@ let currentPlayer = 'x'
 // let arrGameHistory = []
 // check if currentPlayer have a value
 const gameTie = (tie) => tie !== ''
-
 const onGamesUpdate = function (event) {
+  $('#warning').text('')
   event.preventDefault()
   const div = event.target
   const position = $(div).data('cell-index')
@@ -54,6 +54,7 @@ const onGamesUpdate = function (event) {
         store.game.over = true
         xWon = true
         //    arrGameHistory.push(store.game.cells[i])
+        $('#hid-warning').hide()
         $('#head-board').hide()
         $('.box').text('X WON!')
       }
@@ -69,6 +70,7 @@ const onGamesUpdate = function (event) {
         //  oWon = 0
         store.game.over = true
         oWon = true
+        $('#hid-warning').hide()
         $('#head-board').hide()
         $('.box').text('O WON!')
         currentPlayer = 'x'
@@ -79,13 +81,14 @@ const onGamesUpdate = function (event) {
   if (store.game.cells.every(gameTie) && (!xWon || !oWon)) {
     // if (store.game.cells.every(e => e !== '')  also work
     $('#head-board').hide()
+    $('#hid-warning').hide()
     $('.box').text('Tie Game!')
     store.game.over = true
   }
   // check if space is empty
   if ($(div).text() === '') {
-  //  store.game.player = currentPlayer
-  // add x to the board
+    //  store.game.player = currentPlayer
+    // add x to the board
     $('.letter-x').css('color', '#1d7d9e')
     $('.letter-o').css('color', '#fce41a')
     $('.letter-o').css('background-color', '#1d7d9e').text('O')
@@ -100,6 +103,11 @@ const onGamesUpdate = function (event) {
     } else {
       currentPlayer = 'x'
     }
+  } else {
+    store.game.over = false
+    $(div).off('click')
+    $('#hid-warning').show()
+    return $('#warning').text('Someone There!')
   }
 }
 

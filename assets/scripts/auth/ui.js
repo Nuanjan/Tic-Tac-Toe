@@ -93,7 +93,7 @@ const signoutSuccess = function () {
   $('#sign-out').addClass('hidden')
   $('#show-signin').show()
   $('#show-signup').show()
-  store.user = null
+  store.user.token = null
   $('#hid').hide()
   $('#sign-out').hide()
   $('.hide-sign-out').hide()

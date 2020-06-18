@@ -4,9 +4,11 @@ const store = require('./../store')
 const createSuccess = function (response) {
   // Messaging:
   store.game = response.game
+  store.games = response.games
   $('.box').text('')
   $('#head-board').show()
   $('#hid').show()
+  $('#warning').text('')
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
 }
 const createFailure = function () {
@@ -21,6 +23,7 @@ const createFailure = function () {
 
 const indexSuccess = function (response) {
   $('#totalGame').show().text(`You have been play: ${response.games.length} times!`).delay(2000).fadeOut(800)
+  $('#warning').text('')
 }
 
 const indexFailure = function () {
@@ -30,13 +33,12 @@ const indexFailure = function () {
   // Remove all the classes, then add the failure class
   $('#message').removeClass()
   $('#message').addClass('failure')
+  $('#warning').text('')
 }
 const updateSuccess = function (response) {
-  // Put book on the page
-  // Messaging:
+  $('.hidden-newGame').show()
   if (store.game.over === true) {
-    $('.hidden-newGame').show()
-    $('.box').off('click')
+    $('#hid-warning').hide()
   }
 }
 
@@ -44,12 +46,10 @@ const updateFailure = function () {
   // Show a error message
   // Select the message element, change its text, and display it
   // Change the text:
-  $('#message').text('Show letter failed!')
   // Show the element:
-  $('#message').show()
   // Remove all the classes, then add the failure class
-  $('#message').removeClass()
-  $('#message').addClass('failure')
+  $('#warning').text('Someone There!')
+  $('#hid-warning').show()
 }
 
 module.exports = {

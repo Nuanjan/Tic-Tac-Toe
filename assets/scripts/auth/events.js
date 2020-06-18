@@ -2,6 +2,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('./../store')
 
 const onCredSignUp = function (event) {
   event.preventDefault()
@@ -34,7 +35,6 @@ const onCredSignOut = function (event) {
   api.credSignOut()
     .then(ui.signoutSuccess)
     .catch(ui.signoutFailure)
-  $('#sign-in').on('submit', onCredSignIn)
 }
 
 module.exports = {
