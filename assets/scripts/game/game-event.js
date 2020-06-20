@@ -27,6 +27,7 @@ let currentPlayer = 'x'
 // let arrGameHistory = []
 // check if currentPlayer have a value
 const gameTie = (tie) => tie !== ''
+
 const onGamesUpdate = function (event) {
   $('#warning').text('')
   event.preventDefault()
@@ -40,6 +41,26 @@ const onGamesUpdate = function (event) {
   // now the currentPlayer will be store to the index of the postion when click .
   store.game.cells[position] = currentPlayer
   // GOAl Check if x/o won so x/o have to match the index of horizontal and vertical and slope
+  // check if space is empty
+  if ($(div).text() === '') {
+    $('.letter-x').css('color', '#1d7d9e')
+    $('.letter-o').css('color', '#fce41a')
+    $('.letter-o').css('background-color', '#1d7d9e').text('O')
+    $('.letter-x').css('background-color', '#fce41a').text('X TURN!')
+    $(div).text(currentPlayer)
+    if (currentPlayer === 'x') {
+      $('.letter-x').css('color', '#fce41a')
+      $('.letter-o').css('color', '#1d7d9e')
+      $('.letter-o').css('background-color', '#fce41a').text('O TURN!')
+      $('.letter-x').css('background-color', '#1d7d9e').text('X')
+      currentPlayer = 'o'
+    } else {
+      currentPlayer = 'x'
+    }
+  } else {
+    // need to fix if the tie already shouldn't be a ble to click or change the value
+    ui.updateFailure()
+  }
   for (let i = 0; i < store.game.cells.length; i++) {
     if (store.game.cells[i] === 'x') {
       if ((store.game.cells[i] === store.game.cells[0] && store.game.cells[i] === store.game.cells[1] && store.game.cells[i] === store.game.cells[2]) ||
@@ -84,30 +105,6 @@ const onGamesUpdate = function (event) {
     $('#hid-warning').hide()
     $('.box').text('Tie Game!')
     store.game.over = true
-  }
-  // check if space is empty
-  if ($(div).text() === '') {
-    //  store.game.player = currentPlayer
-    // add x to the board
-    $('.letter-x').css('color', '#1d7d9e')
-    $('.letter-o').css('color', '#fce41a')
-    $('.letter-o').css('background-color', '#1d7d9e').text('O')
-    $('.letter-x').css('background-color', '#fce41a').text('X TURN!')
-    $(div).text(currentPlayer)
-    if (currentPlayer === 'x') {
-      $('.letter-x').css('color', '#fce41a')
-      $('.letter-o').css('color', '#1d7d9e')
-      $('.letter-o').css('background-color', '#fce41a').text('O TURN!')
-      $('.letter-x').css('background-color', '#1d7d9e').text('X')
-      currentPlayer = 'o'
-    } else {
-      currentPlayer = 'x'
-    }
-  } else {
-    store.game.over = false
-    $(div).off('click')
-    $('#hid-warning').show()
-    return $('#warning').text('Someone There!')
   }
 }
 
