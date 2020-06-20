@@ -7,6 +7,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGamesCreate = function (event) {
   $('.box').html('')
+  $('.box').siblings().removeClass('disabled')
   currentPlayer = 'x'
   $('#warning').text('')
   $('.letter-x').css('color', '#fce41a')
@@ -39,10 +40,10 @@ const onGamesUpdate = function (event) {
     .catch(ui.updateFailure)
   // the postion is the number from the div.data from the html element that I set.
   // now the currentPlayer will be store to the index of the postion when click .
-  store.game.cells[position] = currentPlayer
   // GOAl Check if x/o won so x/o have to match the index of horizontal and vertical and slope
   // check if space is empty
   if ($(div).text() === '') {
+    store.game.cells[position] = currentPlayer
     $('.letter-x').css('color', '#1d7d9e')
     $('.letter-o').css('color', '#fce41a')
     $('.letter-o').css('background-color', '#1d7d9e').text('O')
@@ -58,7 +59,6 @@ const onGamesUpdate = function (event) {
       currentPlayer = 'x'
     }
   } else {
-    // need to fix if the tie already shouldn't be a ble to click or change the value
     ui.updateFailure()
   }
   for (let i = 0; i < store.game.cells.length; i++) {
