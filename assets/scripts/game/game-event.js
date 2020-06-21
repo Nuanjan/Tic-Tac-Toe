@@ -22,14 +22,14 @@ const onGamesCreate = function (event) {
     .catch(ui.createFailure)
 }
 
-let xWon = false
-let oWon = false
 let currentPlayer = 'x'
 // let arrGameHistory = []
 // check if currentPlayer have a value
 const gameTie = (tie) => tie !== ''
 
 const onGamesUpdate = function (event) {
+  let xWon = false
+  let oWon = false
   $('#warning').text('')
   event.preventDefault()
   const div = event.target
@@ -99,7 +99,7 @@ const onGamesUpdate = function (event) {
     }
   }
   // if every cells has value
-  if (store.game.cells.every(gameTie) && (!xWon || !oWon)) {
+  if (store.game.cells.every(gameTie) && xWon === false && oWon === false) {
     // if (store.game.cells.every(e => e !== '')  also work
     $('#head-board').hide()
     $('#hid-warning').hide()
