@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe Game application</title>
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+<main>
+  <div class="row-header">
+          <div id="header">
+              <h1>Tic <span>Tac</span> Toe <span>Game application</span></h1>
+          </div>
+        </div>
+
+  <p id="message"></p>
+  <div class="wrap">
+  <section>
+    <button id="sign-out">Sign Out</button>
+  </section>
+</div>
+  <div id="set-text"></div>
+<div class="set-page">
+<div class="column" id="show-signup">
+      <section id="sec-sign-up">
+        <h1>Sign Up</h1>
+        <form id="sign-up">
+          <input placeholder="email" type="email"
+          name="credentials[email]" required>
+          <input placeholder="password" type="password"
+          name="credentials[password]" required>
+          <input placeholder="confirm password" type="password"
+          name="credentials[password_confirmation]" required>
+          <button type="submit">sign up</button>
+        </form>
+      </section>
+      </div>
+<div class="column" id="show-signin">
+      <section>
+        <h1>Sign In</h1>
+        <form id="sign-in">
+          <input placeholder="email" type="email"
+          name="credentials[email]" required>
+          <input placeholder="password" type="password"
+          name="credentials[password]" required>
+          <button type="submit">sign In</button>
+        </form>
+      </section>
+  </div>
+</div>
+<div class="hide-sign-out">
+<div id="hidden">
+      <section>
+        <div id="ch-pw">
+        <h3>Change Password</h3>
+        <p id="ch-msg"></p>
+        <form id="change-pw">
+          <input placeholder="Old Password" type="password"
+          name="passwords[old]" required>
+          <input placeholder="New password" type="password"
+          name="passwords[new]" required>
+          <button type="submit">change Password</button>
+        </form>
+      </div>
+      </section>
+
+<section>
+<div class="center">
+          <h3>Welcome To Tic-Tac-Toe Game</h3>
+          <button id="games-create">New Game</button>
+        </div>
+</section>
+<section>
+  <h3>Game History</h3>
+  <button id="games-index">Show Game History</button>
+  <div id="totalGame">
+  </div>
+</section>
+</div>
+</div>
+
+<div id="hid">
+<section>
+  <div class="row h-100" id="head-board">
+      <div class="col-6 letter-x ">X<span id="x"> TURN!</span></div>
+      <div class="col-6 letter-o ">O</div>
+  </div>
+  <div id="hid-warning">
+  <p id="warning"></p>
+</div>
+<div class="container">
+  <div class="row game-board">
+    <div class="col-4 box" disabled="disabled" data-cell-index='0' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='1' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='2' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='3' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='4' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='5' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='6' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='7' ></div>
+    <div class="col-4 box" disabled="disabled" data-cell-index='8' ></div>
+  </div>
+</div>
+</section>
+</div>
+</main>
+<footer><p>Developer: Nuanjan Schluntz &#128519 </p></footer>
+    </body>
+</html>
