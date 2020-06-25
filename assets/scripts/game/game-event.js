@@ -114,9 +114,16 @@ const onGamesIndex = function (event) {
     .catch(ui.indexFailure)
 }
 
+const onGamesShow = function (event) {
+  api.gamesShow(status)
+    .then(ui.showSuccess)
+    .catch(ui.showFailure)
+}
+
 module.exports = {
   onGamesCreate,
   onGamesIndex,
-  onGamesUpdate
+  onGamesUpdate,
+  onGamesShow
 
 }

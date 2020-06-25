@@ -16,5 +16,6 @@ $(() => {
   $('#games-create').on('click', gameEvent.onGamesCreate)
   $('#games-index').on('click', gameEvent.onGamesIndex)
   $('.box').on('click', gameEvent.onGamesUpdate)
+  $('#games-show').on('click', gameEvent.onGamesShow)
   //  $('.box').unbind('click').one('click', gameEvent.onGamesUpdate)
 })

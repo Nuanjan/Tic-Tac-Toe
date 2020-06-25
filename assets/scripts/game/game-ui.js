@@ -10,6 +10,7 @@ const createSuccess = function (response) {
   $('#hid').show()
   $('#warning').text('')
   $('.letter-x').css('background-color', '#1d7d9e').text('X TURN!')
+  $('ul').hide()
 }
 const createFailure = function () {
   // Show a error message
@@ -52,11 +53,32 @@ const updateFailure = function () {
   $('#hid-warning').show()
 }
 
+const showSuccess = function (response) {
+  for (let i = 0; i < response.games.length; i++) {
+    if (store.game.over === true) {
+      console.log(response.games[i])
+      $('ul').show().append(`<li>${response.games[i].cells}</li>`)
+    }
+  }
+  $('#hid').hide()
+}
+const showFailure = function () {
+  $('#message').text('Show Previous Game failed!')
+  // Show the element:
+  $('#message').show()
+  // Remove all the classes, then add the failure class
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  $('#warning').text('')
+}
+
 module.exports = {
   createSuccess,
   createFailure,
   indexSuccess,
   indexFailure,
   updateSuccess,
-  updateFailure
+  updateFailure,
+  showSuccess,
+  showFailure
 }

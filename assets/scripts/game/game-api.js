@@ -43,8 +43,19 @@ const gameUpdate = function (position, player) {
     }
   })
 }
+
+const gamesShow = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games?over=' + store.game.over,
+    medthod: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   gamesCreate,
   gamesIndex,
-  gameUpdate
+  gameUpdate,
+  gamesShow
 }

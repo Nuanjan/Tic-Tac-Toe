@@ -1,9 +1,9 @@
 'use strict'
-
+// we can use store object to add the property as long as the app alive
 const store = {
   game: {
     cells: ['', '', '', '', '', '', '', '', ''],
-    color: ['#fce41a', '#1d7d9e']
+    win: ''
   }
 
 }
